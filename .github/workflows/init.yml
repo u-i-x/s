@@ -27,6 +27,10 @@ on:
         description: 'Shadcn base'
         required: true
         default: 'base'
+        type: choice
+        options:
+          - base
+          - radix
 
 jobs:
   create-app:
