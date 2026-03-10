@@ -23,6 +23,10 @@ on:
         description: 'Shadcn preset'
         required: true
         default: 'a1D0dv72'
+      base:
+        description: 'Shadcn base'
+        required: true
+        default: 'base'
 
 jobs:
   create-app:
@@ -43,7 +47,7 @@ jobs:
         version: 10
         
     - name: Create App
-      run: pnpm dlx shadcn@latest init --monorepo --base base --template ${{ inputs.template }} --preset ${{ inputs.preset }} --name ${{ inputs.name }}
+      run: pnpm dlx shadcn@latest init --monorepo --base ${{ inputs.base }} --template ${{ inputs.template }} --preset ${{ inputs.preset }} --name ${{ inputs.name }}
 
     - name: Move app to root
       run: |
